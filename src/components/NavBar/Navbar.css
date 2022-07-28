@@ -1,0 +1,39 @@
+.header-top {
+    background-color: #04042f;
+    display: flex;
+    justify-content: space-between;
+}
+    p {
+      font-size: 20px;
+      
+      }
+    ul {
+       list-style: none;
+       display: flex;
+       align-items: center;
+    }
+    
+       li {
+        margin-left: 1rem;
+        border-radius:20px;
+        padding: 4px 10px;
+        background-color: rgba(4, 4, 47, 0.8);
+        font-weight: bold;
+        }
+      
+  
+       a {
+        display: inline-block;
+        color:#ffff;
+        text-decoration: none;
+        }
+
+        header {
+          height: 250%;
+          background-color: #ddd;    
+          padding: 1rem;
+        }
+        a:hover {
+          color: #ddd;
+        }
+     
