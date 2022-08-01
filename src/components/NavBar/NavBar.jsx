@@ -4,10 +4,10 @@ import CartWidget from '../CartWidget/CartWidget';
 
 export const NavBar = () => {
   return (
-    <div className="navbar navbar-expand-lg navbar-light bg-light">
+    <div className="navbar navbar-expand-lg navbar-light bg-secondary">
       
       <div className='container-fluid header-top'>
-      <a class="navbar-brand" href="#"><strong>El equipo de la ciudad</strong></a>
+      <a class="navbar-brand text-light" href="#"><strong>El equipo de la ciudad</strong></a>
       <div classname="collapse navbar-collapse" id="navbarSupportedContent">
       <ul classname="navbar-nav me-auto mb-2 mb-lg-0">
         <li classname="nav-item">
