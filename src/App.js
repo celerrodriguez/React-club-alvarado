@@ -20,7 +20,7 @@ function App() {
       </header>
       <main>
       <ItemListContainer greeting="¡Hola!" />
-      <Card image={img1} title={"Camiseta titular 2022"} description={"Camiseta titular adulto Lyon. Campeonato Primera Nacional 2022"} price={9800}/>
+      <Card image={img1} title={"Camiseta titular 2022"} description={"Camiseta titular adulto Lyon. Campeonato de Primera Nacional 2022"} price={9800}/>
       </main>
       
       
