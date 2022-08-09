@@ -1,6 +1,8 @@
 import React from 'react';
 import './Navbar.css';
+import img from "https://res.cloudinary.com/dcwondno7/image/upload/v1660071953/alvarado/club-atletico-alvarado_gawl1h.png";
 import CartWidget from '../CartWidget/CartWidget';
+import { Link } from "react-router-dom";
 
 export const NavBar = () => {
   return (
@@ -25,7 +27,11 @@ export const NavBar = () => {
         </ul>
       </div>
       </div>
-     
+
+      <div className='d-flex bg-light'>
+        <img src={img} className='img-logo' alt='Logo Club Atlético Alvarado' />
+        <h1 className='title'>Alva Shop</h1>
+      </div>
     </div>
   );
 }
