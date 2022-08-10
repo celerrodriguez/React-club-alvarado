@@ -23,7 +23,7 @@ function ItemListContainer() {
   return (
     <div>
       <h1 className='text-center pt-4 text-light' style={{fontSize: "60px", height: "10rem", backgroundColor:"#04042f" }} >Temporada 2022</h1>
-      <div className='d-flex flex-row '>
+      <div >
         <ItemList data = {data}/>
       </div> 
       
