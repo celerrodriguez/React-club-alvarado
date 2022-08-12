@@ -4,18 +4,19 @@ import Item from '../Item/Item.jsx';
 
 const ItemList = ({data}) => {
   return (
-    <div className='d-flex flex-row '>
+    <div className='container'>
+      <div className='d-flex flex-row flex-wrap justify-content-center mt-5'>
         {data.map((singleItem) => { 
             return ( 
                 <Item 
                     key={singleItem.id}
                     image={singleItem.image}
                     title={singleItem.title} 
-                    //description={singleItem.description} 
                     price={singleItem.price} 
                 />
             );
         })}
+    </div>
     </div>
   )
 }
