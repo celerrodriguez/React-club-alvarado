@@ -14,7 +14,7 @@
        padding-top: 1rem;
     }
     
-       li {
+       li, .link {
         margin-left: 1rem;
         border-radius:20px;
         padding: 4px 10px;

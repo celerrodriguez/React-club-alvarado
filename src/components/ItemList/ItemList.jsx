@@ -10,6 +10,7 @@ const ItemList = ({data}) => {
             return ( 
                 <Item 
                     key={singleItem.id}
+                    id={singleItem.id}
                     image={singleItem.image}
                     title={singleItem.title} 
                     price={singleItem.price} 

@@ -1,20 +1,29 @@
 import React from 'react'
 import ItemCount from '../ItemCount/ItemCount.jsx';
+import { Link } from 'react-router-dom';
 
 
 const ItemDetail = ({image, stock, title, description, price}) => {
   return (
-    <div className='p-3'>
-        <div className='card' style={{width: "18rem", height: "100%"}}>
-            <img src= {image} className='card-img-top' alt="..."/>
-            <div className='card-body text-center'>
-                <h5 className='card-title'>{title}</h5>
-                <p className='card-text'>{description}</p>
-                <h5 className='card-title'>$ {price}</h5>
+    <div className='m-5'>
+      <div className='card pt-5' style={{margin: 'auto', maxWidth: "80%"}}>
+        <div className='row g-0'>
+          <div className='col-md-4' > 
+            <img src= {image} className='img-fluid rounded-start' alt="..." style={{maxWidth: 600, margin:"auto" }}/>
+          </div>
+          <div className='col-md-8'>
+            <div className='card-body'>
+                <h5 className='card-title text-center'><strong>{title}</strong></h5>
+                <p className='card-text text-center'>{description}</p>
+                <h5 className='card-title text-center'><strong>$ {price}</strong></h5>
                   <br/>
                 <ItemCount initial={1} stock={stock} />
+                <br />
+                <Link className='pt-2' to='/' style={{color: "#04042f", textDecorationLine:"underline"}}><strong>⇽ Volver</strong> </Link>
             </div>
+          </div>
         </div>
+      </div>
     </div>
   )
 }

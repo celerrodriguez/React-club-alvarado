@@ -1,3 +1,9 @@
+# Introducción a proyecto
+
+Es un e-commerce de productos oficiales del Club Atlético Alvarado de Mar del Plata. Está desarrollado por Celeste Rodriguez, quien es alumna del curso de React Js en Coder House durante el año 2022. 
+
+>El proyecto trabaja con React-App, a continuación hay un breve resumen de como instalarlo y trabajar
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +74,31 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Instalación de paquetes para trabajar
+
+
+## Instalación de Boostrap
+
+Versión 5.2.0
+### `npm install bootstrap`
+
+## Instalación de react-router-dom
+
+Versión 6.3.0
+### `npm install react-router-dom`
+
+## Instalación de reactstrap
+
+Versión 9.1.3
+### `npm install reactstrap react react-dom`
+
+## Instalación de sweetalert2
+
+Versión 11.4.24
+### `npm install sweetalert2`
+
+
+
+## Dudas, comentarios, sugerencias o persmisos. 
+Enviar un mail a celesteerrodriguez@gmail.com 
