@@ -11,7 +11,7 @@ export const NavBar = ({category}) => {
       <div className="navbar navbar-expand-lg navbar-light bg-secondary">
         
         <div className='container-fluid header-top'>
-          <Link class="navbar-brand text-light" to="#"><strong>El equipo de la ciudad</strong></Link>
+          <Link classname="navbar-brand text-light" to="#"><strong>El equipo de la ciudad</strong></Link>
           <div classname="collapse navbar-collapse" id="navbarSupportedContent">
             <ul classname="navbar-nav me-auto mb-2 mb-lg-0">
               <li classname="nav-item">
