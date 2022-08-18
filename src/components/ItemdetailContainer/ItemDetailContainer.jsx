@@ -11,7 +11,7 @@ function ItemDetailContainer({ itemid }) {
 function traerProducto() {
     return new Promise((resolve, reject) => {
         
-        let itemRequested = itemsData.find( elemento => elemento.id == idURL)
+        let itemRequested = itemsData.find( elemento => elemento.id === idURL)
         resolve(itemRequested);
         if(itemRequested === undefined)
             reject('No se encontró el producto')

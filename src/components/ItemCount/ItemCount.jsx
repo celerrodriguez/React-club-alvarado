@@ -17,15 +17,15 @@ function ItemCount(props) {
     };
   };
 
-  const onAdd = () => {
-    Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Producto agregado al carrito',
-        showConfirmButton: false,
-        timer: 1500
-      })
-  };
+  // const onAdd = () => {
+  //   Swal.fire({
+  //       position: 'center',
+  //       icon: 'success',
+  //       title: 'Producto agregado al carrito',
+  //       showConfirmButton: false,
+  //       timer: 1500
+  //     })
+  // };
 
   return (
     <>
@@ -38,7 +38,7 @@ function ItemCount(props) {
       </div>
       
       <div className='d-grid gap-2 col-8 mx-auto' >
-        <button onClick={onAdd} className="btn btn-secondary mt-3" >Añadir al carrito</button>
+        <button onClick={ () => props.onAdd(count) } className="btn btn-secondary mt-3" >{props.text}</button>
       </div>
     </>
   );
