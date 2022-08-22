@@ -41,7 +41,7 @@ function removeAll() {
 }
 
   return (
-    <cartContext.Provider value={ {cart, addToCart}}>
+    <cartContext.Provider value={ {cart, addToCart, removeAll, removeItem}}>
         {children}
     </cartContext.Provider>
   )

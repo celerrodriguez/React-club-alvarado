@@ -12,16 +12,16 @@ export const NavBar = ({category}) => {
         
         <div className='container-fluid header-top'>
           <Link className="navbar-brand text-light" to="#" style={{ fontSize:20}}><strong>El equipo de la ciudad </strong></Link>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">Inicio</Link>
+          <div classname="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul classname="navbar-nav me-auto mb-2 mb-lg-0">
+              <li classname="nav-item">
+                <Link classname="nav-link active" aria-current="page" to="/">Inicio</Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="#">Medios de pago</Link>
+              <li classname="nav-item">
+                <Link classname="nav-link active" aria-current="page" to="#">Medios de pago</Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="#">Acceso usuarios</Link>
+              <li classname="nav-item">
+                <Link classname="nav-link" to="#">Acceso usuarios</Link>
               </li>
               <li>
                 <CartWidget />
