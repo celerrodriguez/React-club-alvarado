@@ -4,9 +4,9 @@ import { cartContext } from '../../store/cartContext.jsx';
 import ItemCart from '../ItemCart/ItemCart.jsx';
 
 
-const CartView = (item) => {
+const CartView = () => {
   const { cart, totalPrice } = useContext(cartContext)
-
+  console.log(cart)
   if(cart.lenght === 0){
     return (
       <>
@@ -22,8 +22,9 @@ const CartView = (item) => {
      {
       cart.map(item => <ItemCart key={item.id} item={item}/>)
      }
+     
     </div>
-    
+   
   )
 }
 

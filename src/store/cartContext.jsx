@@ -22,7 +22,7 @@ function addToCart(item, count){
     copyCart.push({...item, count});
     item.stock -= count
     setCart(copyCart)
-    console.log(copyCart)
+    // console.log(copyCart)
     }
 }
 
@@ -35,12 +35,12 @@ function removeItem(item) {
   const indexItem = copyCart.indexOf(itemRemove)
   copyCart.splice(indexItem, 1)
   setCart(copyCart)
-  console.log(copyCart)
+  //console.log(copyCart)
 }
 function removeAll() {
   copyCart = []
   setCart(copyCart)
-  console.log(copyCart)
+  //console.log(copyCart)
 }
 function totalPrice() {
   return cart.reduce((count, item) => count + item.count * item.price, 0)
