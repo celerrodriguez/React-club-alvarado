@@ -29,15 +29,16 @@
         text-decoration: none;
         }
 
+        a:hover {
+          color: #ddd;
+        }
+
         header {
           height: 250%;
           background-color: #ddd;    
           padding: 1rem;
         }
-        a:hover {
-          color: #ddd;
-        }
-     
+        
         .title { 
           font-size: 110px;
           

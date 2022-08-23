@@ -6,13 +6,15 @@ import { useContext } from 'react';
 
 
 const ItemDetail = ({image, stock, title, description, price}) => {
-const { addToCart } = useContext(cartContext)
-const [countCart, SetCountCart] = useState(0);
+const { addToCart } = useContext(cartContext);
+const [countCart, setCountCart] = useState(0);
 
 function handleAdd(count){
   const itemToCart = {image, stock, title, description, price};
   addToCart(itemToCart, count);
-  SetCountCart(count)
+  //console.log(itemToCart)
+  setCountCart(count)
+  //console.log(count)
   
   
 }
@@ -41,6 +43,7 @@ function handleAdd(count){
                   />) : ( 
                   <div className='d-grid gap-2 col-4 mx-auto'>   
                     <Link to='/cart' className='btn text-light  mt-3' style={{backgroundColor: "#04042f", fontWeight:"bold"}}> Ir al carrito</Link>
+                    <Link to='/' className='btn  mt-3 btn-outline-secondary' style={{color: "#04042f"}}> Seguir comprando</Link>
                   </div>)
                   }
                   <Link className='pt-2 mt-3' to='/' style={{color: "#04042f", textDecorationLine:"underline"}}><strong>⇽ Volver</strong> </Link>

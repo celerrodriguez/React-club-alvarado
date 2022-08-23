@@ -9,9 +9,11 @@ export   function CartProvider({children}){
 function addToCart(item, count){
   
     if (isInCart(item.id)){
-      
-      const itemFind = elemento => elemento.id === item.id
-      copyCart[itemFind].count += count;
+      const  findItem = copyCart.find(elemento => elemento.id === item.id);
+       //const itemFind = elemento => elemento.id === item.id
+      findItem.count += count;
+      findItem.stock -= count
+      console.log(findItem)
       setCart(copyCart)
       console.log(copyCart)
     }
@@ -41,7 +43,7 @@ function removeAll() {
 }
 
   return (
-    <cartContext.Provider value={ {cart, addToCart, removeAll, removeItem}}>
+    <cartContext.Provider value={ {cart, addToCart, removeAll, removeItem, isInCart}}>
         {children}
     </cartContext.Provider>
   )
