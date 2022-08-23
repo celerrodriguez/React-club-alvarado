@@ -1,17 +1,12 @@
 import React, { useContext } from 'react'
+import { Link } from 'react-router-dom';
 import { cartContext } from '../../store/cartContext'
 
 export const CartWidget = () => {
   const { cart } = useContext(cartContext);
-
-  let cartInit = 0;
-  cart.map(item => {
-    cartInit += item.count;
-  })
   return (
     <div>
-        <a href="#">🛒</a>
-        
+        <Link to="/cart">🛒</Link>
     </div>
   )
 }

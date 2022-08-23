@@ -3,6 +3,7 @@ import ItemCount from '../ItemCount/ItemCount.jsx';
 import { Link } from 'react-router-dom';
 import { cartContext } from '../../store/cartContext.jsx';
 import { useContext } from 'react';
+import Swal from 'sweetalert2';
 
 
 const ItemDetail = ({image, stock, title, description, price}) => {
@@ -14,7 +15,13 @@ function handleAdd(count){
   addToCart(itemToCart, count);
   //console.log(itemToCart)
   setCountCart(count)
-  //console.log(count)
+  Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: `${count} ${title} agregados al carrito`,
+    showConfirmButton: false,
+    timer: 1500
+  })
   
   
 }
