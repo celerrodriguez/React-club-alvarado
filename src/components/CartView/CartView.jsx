@@ -10,7 +10,7 @@ const CartView = (item) => {
   if(cart.lenght === 0){
     return (
       <>
-      <h2>🛒 Mi carrito</h2>
+      
       <p>Carrito vacío</p>
     
       </>
@@ -20,10 +20,14 @@ const CartView = (item) => {
   return (
     
     <div>
+      
+      <h2 className='m-5' >🛒 Mi carrito</h2>
+      <br /><br />
+
      {
-      cart.map(item => <ItemCart key={item.title} item={item} />)
+      cart.map((item) => <ItemCart key={item.id} item={item} />)
      }
-     <button className='btn btn-danger m-5 p-2' onClick={()=> removeAll(item.id)}> Vaciar carrito</button>
+     <button className='btn btn-danger m-5 p-2 position-absolute top-75 start-50' onClick={()=> removeAll(item.id)}> Vaciar carrito</button>
      
     </div>
    

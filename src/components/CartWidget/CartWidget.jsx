@@ -4,8 +4,10 @@ import { cartContext } from '../../store/cartContext'
 
 export const CartWidget = () => {
   const { cart } = useContext(cartContext);
-  return (
+    return (
     <div>
+
+      
         <Link to="/cart">🛒</Link>
     </div>
   )

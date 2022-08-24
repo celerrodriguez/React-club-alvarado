@@ -11,8 +11,10 @@ function addToCart(item, quantity){
   if (isInCart(item.id)) {
     setCart(cart.map(product => {
       return product.id === item.id ? { ...product, quantity: product.quantity + quantity } : product
-    })); } else { 
-      setCart([ ...cart, { ...item, quantity}]);
+    }));
+  } else { 
+      setCart([ ...cart, { ...item, quantity: quantity}]);
+      
     }
   }
 
@@ -21,8 +23,8 @@ function isInCart(id){
   return( cart.some(itemInCart => itemInCart.id === id))
 }
 
-function removeItem(id) {
-  setCart(cart.filter(product => product.id !== id));
+function removeItem(itemRemove) {
+  setCart(cart.filter(product => product.id !== itemRemove.id));
   
 }
 function removeAll() {
