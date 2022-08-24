@@ -4,8 +4,8 @@ import { cartContext } from '../../store/cartContext.jsx';
 import ItemCart from '../ItemCart/ItemCart.jsx';
 
 
-const CartView = () => {
-  const { cart, totalPrice } = useContext(cartContext)
+const CartView = (item) => {
+  const { cart, totalPrice, removeAll } = useContext(cartContext)
   console.log(cart)
   if(cart.lenght === 0){
     return (
@@ -18,10 +18,12 @@ const CartView = () => {
   }
 
   return (
+    
     <div>
      {
-      cart.map(item => <ItemCart key={item.id} item={item}/>)
+      cart.map(item => <ItemCart key={item.title} item={item} />)
      }
+     <button className='btn btn-danger m-5 p-2' onClick={()=> removeAll(item.id)}> Vaciar carrito</button>
      
     </div>
    
