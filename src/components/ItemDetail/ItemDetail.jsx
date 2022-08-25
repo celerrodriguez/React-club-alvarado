@@ -13,7 +13,7 @@ const [countCart, setCountCart] = useState(0);
 function handleAdd(count){
   const itemToCart = {image, stock, title, description, price};
   addToCart(itemToCart, count);
-  //console.log(itemToCart)
+  
   setCountCart(count)
   Swal.fire({
     position: 'center',

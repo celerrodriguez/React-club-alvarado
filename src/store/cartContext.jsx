@@ -7,15 +7,22 @@ export   function CartProvider({children}){
     const [cart, setCart] = useState([]);
     
 
-function addToCart(item, quantity){
-  if (isInCart(item.id)) {
-    setCart(cart.map(product => {
-      return product.id === item.id ? { ...product, quantity: product.quantity + quantity } : product
-    }));
-  } else { 
-      setCart([ ...cart, { ...item, quantity: quantity}]);
+function addToCart(item){
+  if(isInCart(item)) {
+    cart.forEach(cartItem => cartItem.id === item.id && (cartItem.qty = cartItem.qty + 1))
+    setCart([...cart])
+  } else {
+    setCart([...cart, item])
+  }
+
+  // if (isInCart(item.id)) {
+  //   setCart(cart.map(product => {
+  //     return product.id === item.id ? { ...product, quantity: product.quantity + quantity } : product
+  //   }));
+  // } else { 
+  //     setCart([ ...cart, { ...item, quantity: quantity}]);
       
-    }
+  //   }
   }
 
 
@@ -24,7 +31,7 @@ function isInCart(id){
 }
 
 function removeItem(itemRemove) {
-  setCart(cart.filter(product => product.id !== itemRemove.id));
+  setCart(cart.filter(cartItem => cartItem.id !== itemRemove.id));
   
 }
 function removeAll() {
