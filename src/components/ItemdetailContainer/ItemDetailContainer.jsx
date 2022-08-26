@@ -28,14 +28,7 @@ function traerProducto() {
         }, []);
 
     return (
-        <ItemDetail 
-            key={item.id}
-            image={item.image}
-            title={item.title} 
-            description={item.description} 
-            price={item.price} 
-            stock={item.stock}
-        />
+        <ItemDetail item={item}/>
     )
 }
 

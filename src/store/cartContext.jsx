@@ -7,12 +7,12 @@ export   function CartProvider({children}){
     const [cart, setCart] = useState([]);
     
 
-function addToCart(item){
+function addToCart(item, count){
   if(isInCart(item)) {
-    cart.forEach(cartItem => cartItem.id === item.id && (cartItem.qty = cartItem.qty + 1))
-    setCart([...cart])
+    cart.forEach(cartItem => cartItem.id === item.id && (cartItem.count = cartItem.count + 1))
+    setCart([ ...cart]);
   } else {
-    setCart([...cart, item])
+    setCart([...cart,  { item: item, quantity: count}])
   }
 
   // if (isInCart(item.id)) {
@@ -31,7 +31,7 @@ function isInCart(id){
 }
 
 function removeItem(itemRemove) {
-  setCart(cart.filter(cartItem => cartItem.id !== itemRemove.id));
+  setCart(cart.filter(cartItem => cartItem.item.id !== itemRemove.item.id));
   
 }
 function removeAll() {

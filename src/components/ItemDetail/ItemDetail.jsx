@@ -6,19 +6,19 @@ import { useContext } from 'react';
 import Swal from 'sweetalert2';
 
 
-const ItemDetail = ({image, stock, title, description, price}) => {
+const ItemDetail = ({item}) => {
 const { addToCart } = useContext(cartContext);
 const [countCart, setCountCart] = useState(0);
 
 function handleAdd(count){
-  const itemToCart = {image, stock, title, description, price};
-  addToCart(itemToCart, count);
+  
+  addToCart(item, count);
   
   setCountCart(count)
   Swal.fire({
     position: 'center',
     icon: 'success',
-    title: `${count} ${title} agregados al carrito`,
+    title: `${count} ${item.title} agregados al carrito`,
     showConfirmButton: false,
     timer: 1500
   })
@@ -32,19 +32,19 @@ function handleAdd(count){
       <div className='card pt-5' style={{margin: 'auto', maxWidth: "80%"}}>
         <div className='row g-0'>
           <div className='col-md-4' > 
-            <img src= {image} className='img-fluid rounded-start' alt="..." style={{maxWidth: 450, margin:"auto" }}/>
+            <img src= {item.image} className='img-fluid rounded-start' alt="..." style={{maxWidth: 450, margin:"auto" }}/>
           </div>
           <div className='col-md-8'>
             <div className='card-body'>
-                <h5 className='card-title text-center'><strong>{title}</strong></h5>
-                <p className='card-text text-center'>{description}</p>
-                <h5 className='card-title text-center'><strong>$ {price}</strong></h5>
+                <h5 className='card-title text-center'><strong>{item.title}</strong></h5>
+                <p className='card-text text-center'>{item.description}</p>
+                <h5 className='card-title text-center'><strong>$ {item.price}</strong></h5>
                   <br/>
                 <div>
                   {countCart === 0 ? ( 
                   <ItemCount 
                     initial={1} 
-                    stock={stock} 
+                    stock={item.stock} 
                     onAdd={handleAdd}
                     text={'Agregar al carrito'}
                   />) : ( 
