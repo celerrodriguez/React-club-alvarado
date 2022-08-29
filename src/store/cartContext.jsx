@@ -10,6 +10,7 @@ export   function CartProvider({children}){
 function addToCart(item, count){
   console.log(item, count)
   if(cart.some(elemento => elemento.id === item.id)){
+   // cart.forEach(cartItem => cartItem.id === item.id && (cartItem.count = cartItem.count + 1))
    
      let index = cart.findIndex(elemento => elemento.id === item.id);
      console.log(`el elemento ${item.title} esta en  el cart`);
@@ -26,7 +27,8 @@ function addToCart(item, count){
     setCart([...cart,  { item: item, quantity: count}])
   }
 }
-  
+ 
+
 function removeItem(itemRemove) {
   setCart(cart.filter(cartItem => cartItem.item.id !== itemRemove.item.id));
   
