@@ -8,28 +8,25 @@ export   function CartProvider({children}){
     
 
 function addToCart(item, count){
-  if(isInCart(item)) {
-    cart.forEach(cartItem => cartItem.id === item.id && (cartItem.count = cartItem.count + 1))
-    setCart([ ...cart]);
-  } else {
+  console.log(item, count)
+  if(cart.some(elemento => elemento.id === item.id)){
+   
+     let index = cart.findIndex(elemento => elemento.id === item.id);
+     console.log(`el elemento ${item.title} esta en  el cart`);
+     console.log(index);
+     let product = cart[index];
+       product.count = product.count + count;
+     console.log(product)
+
+     const copyCart = [ ...cart];
+     copyCart.splice(index, 1, product )
+
+     setCart([...copyCart])
+  }else {
     setCart([...cart,  { item: item, quantity: count}])
   }
-
-  // if (isInCart(item.id)) {
-  //   setCart(cart.map(product => {
-  //     return product.id === item.id ? { ...product, quantity: product.quantity + quantity } : product
-  //   }));
-  // } else { 
-  //     setCart([ ...cart, { ...item, quantity: quantity}]);
-      
-  //   }
-  }
-
-
-function isInCart(id){
-  return( cart.some(itemInCart => itemInCart.id === id))
 }
-
+  
 function removeItem(itemRemove) {
   setCart(cart.filter(cartItem => cartItem.item.id !== itemRemove.item.id));
   
@@ -44,7 +41,7 @@ function totalProducts() {
   return cart.reduce((count, items) => count + items.count, 0 )
 }
   return (
-    <cartContext.Provider value={ {cart, addToCart, removeAll, removeItem, isInCart, totalPrice, totalProducts}}>
+    <cartContext.Provider value={ {cart, setCart, addToCart, removeAll, removeItem,  totalPrice, totalProducts}}>
         {children}
     </cartContext.Provider>
   )

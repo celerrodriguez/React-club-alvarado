@@ -7,7 +7,7 @@ const ItemCart = ({item}) => {
   return (
     <div>
         <div className='d-flex m-3 '>
-            <img style={{maxWidth:"10%"} } src={item.item.image} alt={item.title} />
+            <img style={{maxWidth:"10%"} } src={item.item.image} alt={item.item.title} />
             <p className='m-4' >{item.item.title} </p>
             <br/>
             <p className='m-4' >{item.quantity}</p>
