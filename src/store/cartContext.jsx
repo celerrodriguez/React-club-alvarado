@@ -13,7 +13,7 @@ function addToCart(item, count){
    // cart.forEach(cartItem => cartItem.id === item.id && (cartItem.count = cartItem.count + 1))
    
      let index = cart.findIndex(elemento => elemento.id === item.id);
-     console.log(`el elemento ${item.title} esta en  el cart`);
+     console.log(`el elemento ${item.item.title} esta en  el cart`);
      console.log(index);
      let product = cart[index];
        product.count = product.count + count;
