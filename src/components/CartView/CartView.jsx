@@ -4,7 +4,7 @@ import ItemCart from '../ItemCart/ItemCart.jsx';
 
 
 const CartView = (item) => {
-  const { cart, removeAll } = useContext(cartContext)
+  const { cart, removeAll, totalPrice } = useContext(cartContext)
   //console.log(cart)
   
 
@@ -14,14 +14,16 @@ const CartView = (item) => {
       
       <h2 className='m-5' >🛒 Mi carrito</h2>
       <br /><br />
-      <ul className='d-flex flex-column' >
+      <ul className='d-grid gap-2 d-md-flex flex-column justify-content-md-center aling' >
      
         {cart.map((item) => <ItemCart key={item.item.id} item={item} />)}
      
       </ul>
-      <p className='position-absolute start-50' ><strong>Total: $ </strong> </p>
-     <button className='btn btn-danger m-5 p-2 position-absolute top-75 start-50' onClick={()=> removeAll(item)}> Vaciar carrito</button>
-     <button className='btn btn-primary m-5 p-2 position-absolute top-75 start-25' > Comprar</button>
+      <p className='d-grid gap-3 d-md-flex justify-content-md-center' ><strong>Total: $ {totalPrice()} </strong> </p>
+      <div className='d-grid gap-3 d-md-flex justify-content-md-center m-5' >
+     <button className='btn text-light' style={{backgroundColor: "#04042f", fontWeight:"bold"}} > Comprar</button>
+     <button className='btn btn-outline-secondary ' onClick={()=> removeAll(item)}> Vaciar carrito</button>
+     </div>
      
     </div>
    

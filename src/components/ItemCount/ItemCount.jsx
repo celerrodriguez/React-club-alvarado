@@ -37,7 +37,7 @@ function ItemCount(props) {
         <button onClick={handleIncrement}>➕</button>
       </div>
       
-      <div className='d-grid gap-2 col-8 mx-auto' >
+      <div className='d-grid gap-2 col-4 mt-3 mx-auto' >
         <button onClick={ () => props.onAdd(count) } className="btn btn-secondary mt-3" >{props.text}</button>
       </div>
     </>
