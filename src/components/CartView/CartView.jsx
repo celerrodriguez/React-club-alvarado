@@ -12,6 +12,7 @@ const CartView = (item) => {
     
     
     <div>
+      <h2 className='m-5 text-center' >🛒 Mi carrito</h2>
       {totalProducts() === 0 ? (
         <>
           <p className='text-secondary text-center m-5' > Carrito vacío</p>
@@ -19,8 +20,6 @@ const CartView = (item) => {
       ) : (
 
         <>
-          <h2 className='m-5' >🛒 Mi carrito</h2>
-          <br /><br />
           <ul className='d-grid gap-2 d-md-flex flex-column justify-content-md-center aling' >
        
             {cart.map((item) => <ItemCart key={item.item.id} item={item} />)}

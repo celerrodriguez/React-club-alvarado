@@ -7,14 +7,12 @@ export const CartWidget = () => {
   const { cart, totalProducts } = useContext(cartContext);
     return (
     <div>
-       {totalProducts() > 0 ? (
+       {totalProducts() !== 0 && (
       <>
         <Link to="/cart">🛒</Link>
         <span className='text-light' >{totalProducts()}</span>
       </>
-  ) : (
-  <>
-  </>  ) }
+  )}
     </div>
   )
 }
