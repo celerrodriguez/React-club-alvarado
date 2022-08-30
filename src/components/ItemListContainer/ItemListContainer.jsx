@@ -1,14 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import itemsData from '../../data/data.js';
+import firestoreDB from '../../services/firebase.js';
 import ItemList from '../ItemList/ItemList.jsx';
-
+import { getDocs, collection } from 'firebase/firestore'
 
 function getProducts(){
   return new Promise((resolve) => {
-    setTimeout(() => { 
-      resolve(itemsData)
-    }, 2000)
+  const alvashopCollection = collection(firestoreDB, 'alvashop');
+
+  getDocs(alvashopCollection).then(snapshot => {
+    const docsData = snapshot.docs.map(doc => { 
+      return {...doc.data(), id: doc.id}
+      })
+    resolve(docsData);
+  })
+    
+    // setTimeout(() => { 
+    //   resolve(itemsData)
+    // }, 1500)
   })
 }
 

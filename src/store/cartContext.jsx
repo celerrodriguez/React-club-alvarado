@@ -34,11 +34,13 @@ function removeAll() {
 function totalPrice() {
   return cart.reduce((count, item) => count + item.quantity * item.item.price, 0)
 }
-// function totalProducts() {
-//   return cart.reduce((count, items) => count + items.count, 0 )
-// }
+ function totalProducts() {
+   return cart.reduce((count, items) => count + items.quantity, 0 )
+ }
+
+
   return (
-    <cartContext.Provider value={ {cart, setCart, addToCart, removeAll, removeItem,  totalPrice }}>
+    <cartContext.Provider value={ {cart, setCart, addToCart, removeAll, removeItem,  totalPrice, totalProducts }}>
         {children}
     </cartContext.Provider>
   )
