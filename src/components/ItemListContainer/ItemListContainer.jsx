@@ -19,10 +19,10 @@ function getProducts(){
 };
 
 
-  const getItemsFromDBStatus = (categoryParam) => {
+  const getItemsFromDBStatus = (idCategory) => {
     return new Promise((resolve) => {
       const alvashopCollectionRef = collection(firestoreDB, 'alvashop');
-      const q = query(alvashopCollectionRef, where('category', '==', categoryParam));
+      const q = query(alvashopCollectionRef, where('category', '==', idCategory));
 
       getDocs(q).then(snapshot => {
         const docsData = snapshot.docs.map(doc => { 
@@ -32,11 +32,6 @@ function getProducts(){
     });
   })
 };
-    
-    // setTimeout(() => { 
-    //   resolve(itemsData)
-    // }, 1500)
-    //})
 
 
 function ItemListContainer() {
@@ -44,22 +39,20 @@ function ItemListContainer() {
   const [data, setData] = useState([]);
   const idCategory = useParams().idCategory;
 
-  const statusFromParams = useParams().idCategory;
+  //const statusFromParams = useParams().idCategory;
 
   useEffect(() => {
-    if (statusFromParams === undefined)
-      getProducts().then((respuesta)=> {
-        // let itemsFilter = itemsData.filter((elemento) => elemento.category === idCategory)
-        // if (idCategory === undefined) {
-          setData(respuesta);
-        });
-        else { 
-          getItemsFromDBStatus(statusFromParams)
-          //setData(itemsFilter)
-        }
-  
-
-    },[idCategory]);
+    if (idCategory) {
+      getItemsFromDBStatus(idCategory).then((resolve) => {
+        setData(resolve)
+      });
+    } else { 
+      getProducts().then((resolve)=> {
+        setData(resolve)
+      });
+    }
+  }, [idCategory])
+   
 
   return (
     <div>
