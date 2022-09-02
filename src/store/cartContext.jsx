@@ -8,7 +8,7 @@ export   function CartProvider({children}){
     
 
 function addToCart(item, count){
-  console.log(item, count)
+
   if(cart.some(elemento => elemento.item.id === item.id)){
   
     let repeatProduct = cart.find(elemento => elemento.item.id === item.id);

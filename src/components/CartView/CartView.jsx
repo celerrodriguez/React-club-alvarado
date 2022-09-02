@@ -1,11 +1,12 @@
 import React, { useContext } from 'react'
 import { cartContext } from '../../store/cartContext.jsx';
+import UserForm from '../Forms/UserForm.jsx';
 import ItemCart from '../ItemCart/ItemCart.jsx';
 
 
-const CartView = (item) => {
-  const { cart, removeAll, totalPrice, totalProducts } = useContext(cartContext)
-  //console.log(cart)
+const CartView = () => {
+  const { cart, totalPrice, totalProducts } = useContext(cartContext)
+
   
 
   return (
@@ -19,18 +20,20 @@ const CartView = (item) => {
         </>
       ) : (
 
-        <>
-          <ul className='d-grid gap-2 d-md-flex flex-column justify-content-md-center aling' >
-       
-            {cart.map((item) => <ItemCart key={item.item.id} item={item} />)}
-       
-          </ul>
-          <p className='d-grid gap-3 d-md-flex justify-content-md-center' ><strong>Total: $ {totalPrice()} </strong> </p>
-          <div className='d-grid gap-3 d-md-flex justify-content-md-center mt-5' >
-            <button className='btn text-light' style={{backgroundColor: "#04042f", fontWeight:"bold"}} > Comprar</button>
-            <button className='btn btn-outline-secondary ' onClick={()=> removeAll(item)}> Vaciar carrito</button>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col">
+              <ul className='d-grid gap-2 d-md-flex flex-column justify-content-md-center' >              
+                {cart.map((item) => <ItemCart key={item.item.id} item={item} />)}              
+              </ul>
+              <p className='d-grid gap-3 d-md-flex justify-content-md-center' ><strong>Total: $ {totalPrice()} </strong> </p>
+            </div>
+            <div className="col">
+              <UserForm/>
+            </div>
           </div>
-       </>
+        </div>
+        
             )}
     </div>
    

@@ -7,15 +7,14 @@ const ItemCart = ({item}) => {
   return (
     <div>
         <div className='d-flex m-3 '>
-            <img style={{maxWidth:"10%"} } src={item.item.image} alt={item.item.title} />
+            <img style={{maxWidth:"20%"} } src={item.item.image} alt={item.item.title} />
             <p className='m-4' >{item.item.title} </p>
             <br/>
             <p className='m-4' >{item.quantity}</p>
             <p className='m-4' >$ {item.item.price}</p> 
             <p className='m-4' > $ {item.quantity * item.item.price}</p>
-            <button className='btn btn-danger p-2' style={{width:"30px", height: "40px", fontWeight:"bold", marginTop:"1rem"} } onClick={()=> removeItem(item)} > X </button>
+            <button type='button' className='btn btn-danger text-center btn-xsm mt-3' style={{ height: '35px' }} onClick={()=> removeItem(item)} ><strong>X</strong> </button>
         </div> 
-        <div></div>
         
     </div>
   )

@@ -22,17 +22,6 @@ function traerProducto() {
     })
 }
 
-
-        
-//         let itemRequested = itemsData.find( elemento => elemento.id === idURL)
-//         resolve(itemRequested);
-//         if(itemRequested === undefined)
-//             reject('No se encontró el producto')
-//         else
-//             resolve(itemRequested);
-//     })
-// }
-
     useEffect(() => {
         if(idURL) {
             traerProducto()
