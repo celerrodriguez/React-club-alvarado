@@ -3,7 +3,8 @@ import React, { useContext, useState } from 'react';
 import firestoreDB from '../../services/firebase';
 import { cartContext } from '../../store/cartContext';
 import "./UserForm.css";
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import Swal from 'sweetalert2';
 
 
 const UserForm = (item) => {
@@ -15,7 +16,7 @@ const UserForm = (item) => {
     telefono: "",
   });
 
-  let navigate = useNavigate();
+  
   const [orderFirebase, setOrderFirebase] = useState({
     id: '',
     complete: false,
@@ -34,7 +35,7 @@ async function handleSubmit(e) {
     const collectionRef = collection(firestoreDB, "orders");
     const docRef = await addDoc(collectionRef, ordenDeCompra );
     setOrderFirebase({id: docRef.id, complete: true});
-    navigate(`/thankyou/${docRef.id}`);
+    
 
 
     setUserData({
@@ -58,27 +59,25 @@ async function handleSubmit(e) {
     setUserData(copyUserData);
   }
 
-  // function handleReset(e) {
-  //   setUserData({
-  //     name: "",
-  //     email: "",
-  //     telefono: "",
-  //   })
-//   }
-//  if (orderFirebase.complete === true) {
-//     return (
-//       <div>
-//         <h1>Gracias por tu compra!</h1>
-//         <p>El id de seguimiento de tu compra es: {orderFirebase.id}</p>
-//       </div>
-//     );
-//   }
+function thanks(){
+  
+  Swal.fire(`¡Gracias por su compra! Revise su e-mail, le llegarán los datos de su compra`)
+
+  
+  
+}
 
   return (
     <div className='form-container'>
-      <p className='text-light text-center' ><strong>¡YA CASI ES TUYO!</strong></p>
-      <p className='text-light text-center mt-3' >Completa los datos para crear tu orden de compras:</p>
-      <form  onSubmit={handleSubmit} className='d-grid gap-2  justify-content-md-center mt-5'>
+      <p className='text-light text-center' 
+         style={{fontSize:"20px", fontWeight:"bolder" }}>
+          ¡YA CASI ES TUYO!
+      </p>
+      <p className='text-light text-center mt-3'
+         style={{fontSize:"20px" }}>
+          Completa los datos para crear tu orden de compras:
+      </p>
+      <form  onSubmit={handleSubmit} className='d-grid gap-2  justify-content-md-center mt-4'>
         <div className='form-item'>
           <label htmlFor="name">Nombre:</label>
           <input 
@@ -108,7 +107,9 @@ async function handleSubmit(e) {
         </div>
 
         <div className='d-grid gap-3 d-md-flex justify-content-md-center mt-3' >
-            <button type='submit' className='btn btn-light' style={{ fontWeight:"bold"}} > Finalizar compra</button>
+          <Link to="/">
+            <button type='submit' className='btn btn-light' style={{ fontWeight:"bold"}} onClick={()=> thanks(item)} > Finalizar compra</button>
+          </Link>
             <button className='btn text-light btn-outline-secondary ' onClick={()=> removeAll(item)}> Vaciar carrito</button>
         </div>
       </form>

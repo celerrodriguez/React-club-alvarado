@@ -9,7 +9,10 @@ export const CartWidget = () => {
     <div>
        {totalProducts() !== 0 && (
       <>
-        <Link to="/cart">🛒</Link>
+        <Link to="/cart"> 
+          <img src='https://res.cloudinary.com/dcwondno7/image/upload/v1663190194/alvarado/carrito-de-compras_qbdbsv.png'
+          style={{width:"32px" }} /> 
+        </Link>
         <span className='text-light' >{totalProducts()}</span>
       </>
   )}

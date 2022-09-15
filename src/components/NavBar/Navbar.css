@@ -1,25 +1,16 @@
 .header-top {
-    background-color: #04042f;
+    background-color: rgb(5, 49, 89);
     display: flex;
     justify-content: space-between;
 }
-    p {
-      font-size: 20px;
-      
-      }
-    ul {
-       list-style: none;
-       display: flex;
-       align-items: center;
-       padding-top: 1rem;
-    }
     
-       li, .link {
+    
+       li, .links {
         margin-left: 1rem;
         border-radius:20px;
-        padding: 4px 10px;
-        background-color: rgba(4, 4, 47, 0.8);
-        font-weight: bold;
+        padding: 5px 10px;
+        background-color: rgba(5, 49, 89, 0.8);
+        font-weight: bolder;
         }
       
   
@@ -32,6 +23,7 @@
         a:hover {
           color: #ddd;
         }
+        
 
         header {
           height: 250%;
@@ -40,14 +32,13 @@
         }
         
         .title { 
-          font-size: 110px;
-          
+          font-size: 130px;
           color: #053159;
           font-weight: bold;
         }
         
         .img-logo{
-          height: 100px;
-          width: 100px;
+          height: 118px;
+          width: 120px;
           margin: 1.5rem 1rem;
         }

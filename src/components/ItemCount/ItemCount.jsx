@@ -17,24 +17,25 @@ function ItemCount(props) {
     };
   };
 
-  // const onAdd = () => {
-  //   Swal.fire({
-  //       position: 'center',
-  //       icon: 'success',
-  //       title: 'Producto agregado al carrito',
-  //       showConfirmButton: false,
-  //       timer: 1500
-  //     })
-  // };
 
   return (
     <>
       <h3 className='text-center mb-2' >Unidades</h3>
 
       <div className='d-flex justify-content-center ' >
-        <button onClick={handleDecrement}>➖</button>
-        <div className='border border-secondary col-2 text-center' > {count} </div>
-        <button onClick={handleIncrement}>➕</button>
+        <img  onClick={handleDecrement} 
+                  src="https://res.cloudinary.com/dcwondno7/image/upload/v1663271554/alvarado/menos_1_n94upd.png" 
+                  alt="Añadir" 
+                  style={{width:"34px", height:'32px', marginTop:'5px' }}
+        />
+        <div className='border border-secondary col-1 text-center p-1 m-1' style={{borderRadius:'5px' }} > {count} </div>
+        
+        <img  onClick={handleIncrement} 
+              src="https://res.cloudinary.com/dcwondno7/image/upload/v1663271555/alvarado/anadir_1_mfobmf.png" 
+              alt="Añadir" 
+              style={{width:"34px", height:'32px', marginTop:'5px' }}
+        />
+        
       </div>
       
       <div className='d-grid gap-2 col-4 mt-3 mx-auto' >

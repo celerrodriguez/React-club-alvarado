@@ -13,22 +13,32 @@ const CartView = () => {
     
     
     <div>
-      <h2 className='m-5 text-center' >🛒 Mi carrito</h2>
+      <div className='d-flex justify-content-center m-5'
+           style={{backgroundColor:"#053159" }} >
+        <img src='https://res.cloudinary.com/dcwondno7/image/upload/v1663190194/alvarado/carrito-de-compras_qbdbsv.png'
+            style={{width:"62px", height:"60px", margin:10 }} /> 
+        <h2 className='text-center text-light'
+            style={{fontSize:"60px" }} > 
+              Mi carrito</h2>
+      </div>
       {totalProducts() === 0 ? (
         <>
-          <p className='text-secondary text-center m-5' > Carrito vacío</p>
+          <p className='text-secondary text-center m-5'
+             style={{fontSize:"30px" }}> 
+              El carrito está vacío
+          </p>
         </>
       ) : (
 
         <div className="container-fluid">
           <div className="row">
-            <div className="col">
-              <ul className='d-grid gap-2 d-md-flex flex-column justify-content-md-center' >              
+            <div className="col-8">
+              <ul className='d-grid gap-2 d-flex flex-column justify-content-start' >              
                 {cart.map((item) => <ItemCart key={item.item.id} item={item} />)}              
               </ul>
-              <p className='d-grid gap-3 d-md-flex justify-content-md-center' ><strong>Total: $ {totalPrice()} </strong> </p>
+              <p className='d-grid gap-2 d-md-flex justify-content-md-center' ><strong>Total: $ {totalPrice()} </strong> </p>
             </div>
-            <div className="col">
+            <div className="col-4">
               <UserForm/>
             </div>
           </div>

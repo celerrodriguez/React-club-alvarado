@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import itemsData from '../../data/data.js';
 import firestoreDB from '../../services/firebase.js';
 import ItemList from '../ItemList/ItemList.jsx';
 import { getDocs, collection, query, where } from 'firebase/firestore'
@@ -39,8 +38,6 @@ function ItemListContainer() {
   const [data, setData] = useState([]);
   const idCategory = useParams().idCategory;
 
-  //const statusFromParams = useParams().idCategory;
-
   useEffect(() => {
     if (idCategory) {
       getItemsFromDBStatus(idCategory).then((resolve) => {
@@ -56,11 +53,14 @@ function ItemListContainer() {
 
   return (
     <div>
-      <h1 className='text-center pt-4 text-light' style={{fontSize: "60px", height: "10rem", backgroundColor:"#04042f" }} >Nuestros productos</h1>
+      <h1 className='text-center pt-4 text-light' 
+          style={{fontSize: "60px", height: "10rem", backgroundColor:"#053159" }} 
+      >
+        Nuestros productos
+      </h1>
       <div className='d-flex flex-row '>
         <ItemList data = {data}/>
       </div>
-      
     </div>
   )
 }
