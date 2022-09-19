@@ -30,12 +30,12 @@ function handleAdd(count){
 
   return (
     <div className='m-5'>
-      <div className='card pt-5' style={{margin: 'auto', maxWidth: "80%"}}>
+      <div className='card pt-5 card-detail' style={{margin: 'auto', maxWidth: "80%"}}>
         <div className='row g-0'>
-          <div className='col-md-4' > 
+          <div className='col-lg-4 col-md-12' > 
             <img  src= {item.image} className='img-fluid rounded mx-auto d-block img-detail' alt={item.title}/>
           </div>
-          <div className='col-md-12'>
+          <div className='col-lg-8 col-md-12'>
             <div className='card-body'>
                 <h5 className='card-title text-center'><strong>{item.title}</strong></h5>
                 <p className='card-text text-center'>{item.description}</p>

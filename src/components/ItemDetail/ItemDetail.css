@@ -1,10 +1,13 @@
 .img-detail{
     max-width: 550px;
-
+}
+.card-detail{
+    margin: 'auto';
+     max-width: 80%;
 }
 
 @media (max-width: 768px) {
    .img-detail{
-    max-width: 380px;
+    width: 100%;
    }
 }
