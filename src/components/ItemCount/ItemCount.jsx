@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Swal from 'sweetalert2';
+
 
 
 function ItemCount(props) {
@@ -19,7 +19,7 @@ function ItemCount(props) {
 
 
   return (
-    <>
+    <div className='count-area'>
       <h3 className='text-center mb-2' >Unidades</h3>
 
       <div className='d-flex justify-content-center ' >
@@ -38,10 +38,10 @@ function ItemCount(props) {
         
       </div>
       
-      <div className='d-grid gap-2 col-4 mt-3 mx-auto' >
+      <div className='d-grid gap-2 col-4 col-md-7 mt-3 mx-auto' >
         <button onClick={ () => props.onAdd(count) } className="btn btn-secondary mt-3" >{props.text}</button>
       </div>
-    </>
+    </div>
   );
 }
 

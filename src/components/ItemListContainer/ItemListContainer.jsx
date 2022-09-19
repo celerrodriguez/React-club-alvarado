@@ -4,6 +4,7 @@ import firestoreDB from '../../services/firebase.js';
 import ItemList from '../ItemList/ItemList.jsx';
 import { getDocs, collection, query, where } from 'firebase/firestore'
 import { Ripples } from '@uiball/loaders'
+import './ItemListContainer.css';
 
 
 
@@ -57,8 +58,8 @@ function ItemListContainer() {
 
   return (
     <div>
-      <h1 className='text-center pt-4 text-light' 
-          style={{fontSize: "60px", height: "10rem", backgroundColor:"#053159" }} 
+      <h1 className='text-center pt-4 text-light title-list' 
+
       >
         Nuestros productos
       </h1>

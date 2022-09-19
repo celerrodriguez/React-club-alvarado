@@ -1,0 +1,12 @@
+.drop-title{
+    font-weight:bold; 
+    background-color: #053159; 
+    border:0;
+}
+
+@media (max-width: 768px){
+    .drop-title{
+        font-size: 14px;
+        font-weight:lighter;
+    }
+}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reactstrap'
+import'./Login.css'
 
 const Login = () => {
 
@@ -11,7 +12,7 @@ const Login = () => {
     
       return (
         <Dropdown isOpen={dropdown} toggle={abrirCerrarDropdown} >
-          <DropdownToggle caret style={{fontWeight:'bold', backgroundColor:'#053159', border:0 }}>
+          <DropdownToggle caret className='drop-title'>
               Acceso Usuarios
           </DropdownToggle>
           <DropdownMenu>

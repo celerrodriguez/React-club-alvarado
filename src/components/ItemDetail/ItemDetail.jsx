@@ -33,11 +33,9 @@ function handleAdd(count){
       <div className='card pt-5' style={{margin: 'auto', maxWidth: "80%"}}>
         <div className='row g-0'>
           <div className='col-md-4' > 
-            <img  src= {item.image} className='img-fluid rounded mx-auto d-block' 
-                  alt={item.title} 
-                  style={{maxWidth: 450 }}/>
+            <img  src= {item.image} className='img-fluid rounded mx-auto d-block img-detail' alt={item.title}/>
           </div>
-          <div className='col-md-8'>
+          <div className='col-md-12'>
             <div className='card-body'>
                 <h5 className='card-title text-center'><strong>{item.title}</strong></h5>
                 <p className='card-text text-center'>{item.description}</p>

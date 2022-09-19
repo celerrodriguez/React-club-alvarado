@@ -12,3 +12,51 @@ td.title-column {
     width: 40%;
     text-align: left;
 }
+
+.btn-x{
+    height: 35px;
+    text-align: center;
+}
+@media (max-width: 1248px) {
+    td.qty-item{
+        font-size: 12px;
+    }
+    td.title-column {
+        width: 15%;
+        font-size: 14px;
+        text-align: center;
+    }
+}
+@media (max-width: 768px) {
+    table{
+        max-width: 700px;
+    }
+    td.qty-item{
+        font-size: 14px;
+    }
+    td.title-column {
+        width: 15%;
+        font-size: 14px;
+        text-align: center;
+    }
+}
+@media (max-width: 425px) {
+    
+    .table-cart-row td {
+        width: 420px;
+    }
+    td.img-column{
+        width: 10%;
+    }
+    .img-column img {
+        width: 80px;
+    }
+    td.title-column {
+        width: 10%;
+        font-size: 12px;
+    }
+    .btn-x{
+    width: 10%;
+    height: auto;
+    }
+}

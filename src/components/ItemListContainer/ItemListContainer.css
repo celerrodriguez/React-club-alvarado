@@ -1,0 +1,12 @@
+.title-list {
+    font-size: 60px; 
+    height: 10rem; 
+    background-color:#053159;
+}
+
+
+@media (max-width: 425px) {
+  .title-list{
+    font-size: 44px;
+   }
+}

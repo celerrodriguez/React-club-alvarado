@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { cartContext } from '../../store/cartContext.jsx';
 import UserForm from '../Forms/UserForm.jsx';
 import ItemCart from '../ItemCart/ItemCart.jsx';
+import './CartView.css';
 
 
 const CartView = () => {
@@ -15,16 +16,14 @@ const CartView = () => {
     <div>
       <div className='d-flex justify-content-center m-5'
            style={{backgroundColor:"#053159" }} >
-        <img src='https://res.cloudinary.com/dcwondno7/image/upload/v1663190194/alvarado/carrito-de-compras_qbdbsv.png'
-            style={{width:"62px", height:"60px", margin:10 }} /> 
-        <h2 className='text-center text-light'
-            style={{fontSize:"60px" }} > 
-              Mi carrito</h2>
+        <img  src='https://res.cloudinary.com/dcwondno7/image/upload/v1663190194/alvarado/carrito-de-compras_qbdbsv.png'
+              className='img-cart-view' 
+        /> 
+        <h2 className='text-center text-light title-cart-view'> Mi carrito</h2>
       </div>
       {totalProducts() === 0 ? (
         <>
-          <p className='text-secondary text-center m-5'
-             style={{fontSize:"30px" }}> 
+          <p className='text-secondary text-center m-5 p-cart-view'> 
               El carrito está vacío
           </p>
         </>
@@ -32,13 +31,13 @@ const CartView = () => {
 
         <div className="container-fluid">
           <div className="row">
-            <div className="col-md-7 col-sm-12">
+            <div className="col-lg-6 col-md-12">
               <table >              
                 {cart.map((item) => <ItemCart key={item.item.id} item={item} />)}              
               </table>
               <p className='d-grid gap-2 d-md-flex justify-content-center' ><strong>Total: $ {totalPrice()} </strong> </p>
             </div>
-            <div className="col-md-5">
+            <div className="col-lg-5 col-md-12">
               <UserForm/>
             </div>
           </div>

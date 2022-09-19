@@ -7,7 +7,7 @@ const Item = ({image, title, description, price, id}) => {
   return (
     <div className='p-3'>
       <div className='card' style={{width: "18rem", height: "100%"}}>
-          <img src= {image} className='card-img-top' alt="..."/>
+          <img src= {image} className='card-img-top img-fluid rounded mx-auto d-block' alt={title}/>
           <div className='card-body text-center'>
             <h5 className='card-title'>{title}</h5>
             <p className='card-text'>{description}</p>

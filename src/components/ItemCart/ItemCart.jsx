@@ -11,13 +11,12 @@ const ItemCart = ({item}) => {
             <img src={item.item.image} alt={item.item.title}/>
         </td>
         <td className='title-column' >{item.item.title} </td>
-        <td>{item.quantity}</td>
-        <td>$ {item.item.price}</td> 
-        <td> $ {item.quantity * item.item.price}</td>
+        <td className='qty-item' >{item.quantity}</td>
+        <td className='qty-item' >$ {item.item.price}</td> 
+        <td className='qty-item' > $ {item.quantity * item.item.price}</td>
         <td>
             <button type='button' 
-                    className='btn btn-danger text-center btn-xsm' 
-                    style={{ height: '35px' }} 
+                    className='btn btn-danger btn-xsm btn-x' 
                     onClick={()=> removeItem(item)} 
             ><strong>
                 X
