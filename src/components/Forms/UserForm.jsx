@@ -61,7 +61,7 @@ async function handleSubmit(e) {
 
 function thanks(){
   
-  Swal.fire(`¡Gracias por su compra! Revise su e-mail, le llegarán los datos de su compra`)
+  Swal.fire(`¡Gracias por su compra! Revise su e-mail, le llegarán los datos de su pedido`)
 
   
   

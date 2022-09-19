@@ -1,0 +1,14 @@
+.table-cart-row td {
+    width: 10%;
+    text-align: center;
+};
+td.img-column {
+    width: 20%;
+}
+.img-column img {
+    width: 165px;
+}
+td.title-column {
+    width: 40%;
+    text-align: left;
+}

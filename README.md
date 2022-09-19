@@ -98,6 +98,9 @@ Versión 9.1.3
 Versión 11.4.24
 ### `npm install sweetalert2`
 
+Versión 1.2.6
+### `npm install @uiball/loaders`
+
 
 
 ## Dudas, comentarios, sugerencias o persmisos. 

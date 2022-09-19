@@ -32,13 +32,13 @@ const CartView = () => {
 
         <div className="container-fluid">
           <div className="row">
-            <div className="col-8">
-              <ul className='d-grid gap-2 d-flex flex-column justify-content-start' >              
+            <div className="col-md-7 col-sm-12">
+              <table >              
                 {cart.map((item) => <ItemCart key={item.item.id} item={item} />)}              
-              </ul>
-              <p className='d-grid gap-2 d-md-flex justify-content-md-center' ><strong>Total: $ {totalPrice()} </strong> </p>
+              </table>
+              <p className='d-grid gap-2 d-md-flex justify-content-center' ><strong>Total: $ {totalPrice()} </strong> </p>
             </div>
-            <div className="col-4">
+            <div className="col-md-5">
               <UserForm/>
             </div>
           </div>

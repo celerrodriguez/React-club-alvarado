@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { cartContext } from '../../store/cartContext.jsx';
 import { useContext } from 'react';
 import Swal from 'sweetalert2';
+import './ItemDetail.css'
 
 
 const ItemDetail = ({item}) => {
@@ -32,7 +33,9 @@ function handleAdd(count){
       <div className='card pt-5' style={{margin: 'auto', maxWidth: "80%"}}>
         <div className='row g-0'>
           <div className='col-md-4' > 
-            <img src= {item.image} className='img-fluid rounded-start' alt="..." style={{maxWidth: 450, margin:"auto" }}/>
+            <img  src= {item.image} className='img-fluid rounded mx-auto d-block' 
+                  alt={item.title} 
+                  style={{maxWidth: 450 }}/>
           </div>
           <div className='col-md-8'>
             <div className='card-body'>

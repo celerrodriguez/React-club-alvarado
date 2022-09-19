@@ -3,6 +3,9 @@ import { useParams } from 'react-router-dom';
 import firestoreDB from '../../services/firebase.js';
 import ItemList from '../ItemList/ItemList.jsx';
 import { getDocs, collection, query, where } from 'firebase/firestore'
+import { Ripples } from '@uiball/loaders'
+
+
 
 function getProducts(){
   return new Promise((resolve) => {
@@ -50,6 +53,7 @@ function ItemListContainer() {
     }
   }, [idCategory])
    
+  
 
   return (
     <div>
@@ -58,9 +62,20 @@ function ItemListContainer() {
       >
         Nuestros productos
       </h1>
+      { data.length > 0?
+
       <div className='d-flex flex-row '>
         <ItemList data = {data}/>
       </div>
+      :  
+      <div style={{margin:"10% 50%"}} >
+        <Ripples 
+          size={55}
+          speed={2} 
+          color="#053159" 
+        />
+      </div>
+      }
     </div>
   )
 }

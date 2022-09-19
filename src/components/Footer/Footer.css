@@ -1,0 +1,84 @@
+footer {
+    background-color:#acbcc7;
+    color: #fff;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+    .footer__datos {
+  
+        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-start;
+        margin-top: 6px;
+        margin-right: 8px ;
+    }
+  
+        div {
+            display: flex;
+            flex-direction: row;
+            margin: 2px;
+        }
+            
+            h4 {
+              font-size: 36px;
+              font-weight: bolder;
+            }
+  
+            p {
+                margin-left: 8px;
+                margin-top: 8px;
+            }
+  
+            .club {
+              padding-right: 5px;
+            width: 54px; 
+            height: 54px;
+              }
+  
+            .direccion {
+              margin-top: 8px;
+              margin-left: 6px;
+              width: 32px;
+              height: 32px;
+              }
+                            
+            .telefono {
+              margin-top: 10px;
+              margin-left: 10px;
+              width: 28px;
+              height: 28px;
+              
+              }
+              
+            .mail {
+              margin-top: 10px;
+              margin-left: 10px;
+              @include sizes (28px, 28px);
+              }
+        
+      
+  
+    .footer__copyright {
+        display: flex;
+        align-items: flex-end;
+        font-weight: bold;
+        justify-content: center;
+        }
+  
+    .footer__redes {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-evenly;
+        margin: auto 90px;
+        }
+  
+    .footer__sponsor {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-top: 40px;
+        justify-items: center;
+        justify-content:space-between;
+        }
+    

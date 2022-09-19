@@ -11,6 +11,7 @@
         padding: 5px 10px;
         background-color: rgba(5, 49, 89, 0.8);
         font-weight: bolder;
+        
         }
       
   
@@ -24,13 +25,6 @@
           color: #ddd;
         }
         
-
-        header {
-          height: 250%;
-          background-color: #ddd;    
-          padding: 1rem;
-        }
-        
         .title { 
           font-size: 130px;
           color: #053159;
@@ -41,4 +35,46 @@
           height: 118px;
           width: 120px;
           margin: 1.5rem 1rem;
+        }
+
+
+        @media (max-width: 768px){
+          .navbar {
+          max-width: 100%;
+          }
+          .nav-resp{
+            align-items: center;
+          }
+          .title { 
+            font-size: 90px;
+            margin-top: 5px;
+          }
+          .img-logo{
+            height: 98px;
+            width: 102px;
+            margin-top: 1rem;
+          }
+          .links {
+            font-size: 16px;
+          }
+        }
+
+        @media (max-width: 425px){
+          
+          .nav-resp{
+            flex-direction: column;
+            align-items: center;
+          }
+          .title { 
+            font-size: 58px;
+            margin-top: 5px;
+          }
+          .img-logo{
+            height: 68px;
+            width: 72px;
+            margin-top: 1rem;
+          }
+          .links {
+            font-size: 10px;
+          }
         }

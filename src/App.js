@@ -11,6 +11,9 @@ import CartView from './components/CartView/CartView';
 
 
 
+
+
+
 function App() {
 
   return (
@@ -27,14 +30,6 @@ function App() {
         </CartProvider>
       </BrowserRouter>
       
-      
-     
-      
-      
-
-      
-      
-
     </div>
   );
 }

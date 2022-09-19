@@ -1,32 +1,31 @@
 import React from 'react'
 import { useContext } from 'react'
 import { cartContext } from '../../store/cartContext'
+import "./ItemCart.css"
 
 const ItemCart = ({item}) => {
     const {removeItem } = useContext(cartContext)
   return (
-    <div>
-        <div className='d-flex m-3 '>
-            <img src={item.item.image} 
-                 alt={item.item.title}
-                 style={{maxWidth:"20%"} }  
-            />
-            <p className='m-4' >{item.item.title} </p>
-            <br/>
-            <p className='m-4' >{item.quantity}</p>
-            <p className='m-4' >$ {item.item.price}</p> 
-            <p className='m-4' > $ {item.quantity * item.item.price}</p>
+    <tr className='table-cart-row'>
+        <td className='img-column'>
+            <img src={item.item.image} alt={item.item.title}/>
+        </td>
+        <td className='title-column' >{item.item.title} </td>
+        <td>{item.quantity}</td>
+        <td>$ {item.item.price}</td> 
+        <td> $ {item.quantity * item.item.price}</td>
+        <td>
             <button type='button' 
-                    className='btn btn-danger text-center btn-xsm mt-3' 
+                    className='btn btn-danger text-center btn-xsm' 
                     style={{ height: '35px' }} 
                     onClick={()=> removeItem(item)} 
             ><strong>
                 X
               </strong> 
             </button>
-        </div> 
+        </td> 
         
-    </div>
+    </tr>
   )
 }
 
