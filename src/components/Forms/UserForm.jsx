@@ -36,6 +36,7 @@ async function handleSubmit(e) {
     const docRef = await addDoc(collectionRef, ordenDeCompra );
     setOrderFirebase({id: docRef.id, complete: true});
     
+    
 
 
     setUserData({
@@ -44,7 +45,7 @@ async function handleSubmit(e) {
       telefono: "",
     })
 
-    
+    removeAll()
   }
 
   function inputChangeHandler(e){
@@ -62,11 +63,9 @@ async function handleSubmit(e) {
 function thanks(){
   
   Swal.fire(`¡Gracias por su compra! Revise su e-mail, le llegarán los datos de su pedido`)
-
-  
   
 }
-
+ 
   return (
     <div className='form-container'>
       <p className='text-light text-center' 
@@ -107,9 +106,9 @@ function thanks(){
         </div>
 
         <div className='d-grid gap-3 d-md-flex justify-content-md-center mt-3' >
-          <Link to="/">
-            <button type='submit' className='btn btn-light' style={{ fontWeight:"bold"}} onClick={()=> thanks(item)} > Finalizar compra</button>
-          </Link>
+          <div>
+            <button type='submit' className='btn btn-light' style={{ fontWeight:"bold"}}  onClick={()=>  thanks(item)}  > Finalizar compra</button>
+          </div>
             <button className='btn text-light btn-outline-secondary ' onClick={()=> removeAll(item)}> Vaciar carrito</button>
         </div>
       </form>

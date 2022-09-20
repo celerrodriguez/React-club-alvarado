@@ -2,7 +2,7 @@
 
 Es un e-commerce de productos oficiales del Club Atlético Alvarado de Mar del Plata. Está desarrollado por Celeste Rodriguez, quien es alumna del curso de React Js en Coder House durante el año 2022. 
 
->El proyecto trabaja con React-App, a continuación hay un breve resumen de como instalarlo y trabajar
+>El proyecto trabaja con React-App, y para utiliza Firebase como base de datos de los productos. A continuación hay un breve resumen de como instalarlo. También se detallan los paquetes y su versión instalada, para que se pueda trabajar y visualizar el proyecto correctamente.
 
 # Getting Started with Create React App
 
@@ -97,6 +97,9 @@ Versión 9.1.3
 
 Versión 11.4.24
 ### `npm install sweetalert2`
+
+Version 9.9.3
+### `npm install firebase`
 
 Versión 1.2.6
 ### `npm install @uiball/loaders`
